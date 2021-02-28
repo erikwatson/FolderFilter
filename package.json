@@ -1,0 +1,31 @@
+{
+  "name": "folderfilter",
+  "version": "1.0.0",
+  "description": "Filter your Folders!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikwatson/FolderFilter.git"
+  },
+  "keywords": [
+    "folder",
+    "filter",
+    "utility",
+    "windows",
+    "mac",
+    "linux",
+    "desktop"
+  ],
+  "author": "Erik Watson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erikwatson/FolderFilter/issues"
+  },
+  "homepage": "https://github.com/erikwatson/FolderFilter#readme",
+  "devDependencies": {
+    "electron": "^11.3.0"
+  }
+}
