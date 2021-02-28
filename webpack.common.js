@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './src/electron-render.js',
+  entry: './src/main/main.js',
   output: {
     filename: 'folderfilter.js'
   },
-  target: 'electron-renderer'
+  target: 'electron-main'
 }

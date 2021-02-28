@@ -1,4 +1,5 @@
 const { app, BrowserWindow, Tray, Menu } = require('electron')
+const fs = require('fs')
 
 let tray;
 
@@ -6,7 +7,7 @@ function shutdown () {
   app.exit(0)
 }
 
-function createWindow () {
+function createFilterWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -36,13 +37,8 @@ function createNotificationMenu () {
 
 function start () {
   createNotificationMenu()
+  createFilterWindow()
 }
-
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    start()    
-  }
-})
 
 app.whenReady().then(() => {
   start()
