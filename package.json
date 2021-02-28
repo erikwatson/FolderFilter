@@ -2,7 +2,7 @@
   "name": "folderfilter",
   "version": "1.0.0",
   "description": "Filter your Folders!",
-  "main": "./dist/folderfilter.min.js",
+  "main": "./dist/folderfilter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
