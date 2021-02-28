@@ -1,6 +1,8 @@
 const { app, BrowserWindow, Tray, Menu } = require('electron')
 const fs = require('fs')
+const path = require('path')
 
+let win;
 let tray;
 const trayMenuTemplate = [
   { label: 'Add Filter', type: 'normal' },
@@ -16,7 +18,7 @@ function shutdown () {
 }
 
 function createFilterWindow () {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -51,4 +53,11 @@ function start () {
 
 app.whenReady().then(() => {
   start()
+  console.log(path.resolve(__dirname), __dirname)
+
+  const watcher = fs.watch(path.resolve(__dirname))
+
+  watcher.on('change', () => {
+    win.reload()
+  })
 })

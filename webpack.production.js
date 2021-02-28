@@ -4,6 +4,6 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: 'folderfilter.min.js'
+    filename: '[name].min.js'
   }
 })
