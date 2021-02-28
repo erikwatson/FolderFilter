@@ -2,6 +2,10 @@ const { app, BrowserWindow, Tray, Menu } = require('electron')
 
 let tray;
 
+function shutdown () {
+  app.exit(0)
+}
+
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
@@ -18,15 +22,19 @@ function createNotificationMenu () {
   tray = new Tray('./dist/icon.png')
 
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'One', type: 'radio' }
+    { label: 'Add Filter', type: 'normal' },
+    { label: 'Edit Filters', type: 'normal' },
+    { type: 'separator' },
+    { label: 'Preferences', type: 'normal' },
+    { type: 'separator' },
+    { label: 'Close', type: 'normal', click: shutdown }
   ])
 
-  tray.setToolTip('Folder Filter Actions')
+  tray.setToolTip('Folder Filter')
   tray.setContextMenu(contextMenu)
 }
 
 function start () {
-  createWindow()
   createNotificationMenu()
 }
 
